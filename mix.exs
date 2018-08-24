@@ -22,10 +22,10 @@ defmodule SlackLoggerBackend.Mixfile do
 
   defp deps do
     [
-      {:httpoison, "~> 0.10"},
+      {:httpoison, "~> 1.2"},
       {:poison, "~> 2.2 or ~> 3.1"},
-      {:gen_stage, "~> 0.11"},
-      {:poolboy, "~> 1.5.1"},
+      {:gen_stage, "~> 0.14"},
+      {:poolboy, "~> 1.5"},
       {:excoveralls, "~> 0.5", only: :test},
       {:earmark, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.14", only: :dev},
