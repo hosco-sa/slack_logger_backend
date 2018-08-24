@@ -13,6 +13,7 @@ defmodule SlackLoggerBackend.FormatHelper do
     {:ok, event} = %{attachments: [%{
           fallback: "An #{level} level event has occurred: #{message}",
           pretext: message,
+          color: get_color(level),
           fields: [%{
             title: "Level",
             value: level,
@@ -46,6 +47,7 @@ defmodule SlackLoggerBackend.FormatHelper do
     {:ok, event} = %{attachments: [%{
           fallback: "An #{level} level event has occurred: #{message}",
           pretext: message,
+          color: get_color(level),
           fields: [%{
             title: "Level",
             value: level,
@@ -76,4 +78,9 @@ defmodule SlackLoggerBackend.FormatHelper do
     event
   end
 
+  defp get_color(:info), do: "#1898c2"
+  defp get_color(:debug), do: "#ffd77e"
+  defp get_color(:warn), do: "warning"
+  defp get_color(:error), do: "danger"
+  defp get_color(_), do: "good"
 end
