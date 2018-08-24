@@ -4,9 +4,10 @@ defmodule SlackLoggerBackend.Logger do
   The actual logger backend for sending logger events to Slack.
   """
 
-  use GenEvent
   alias SlackLoggerBackend.Producer
 
+  @behaviour :gen_event
+  
   @env_webhook "SLACK_LOGGER_WEBHOOK_URL"
   @default_log_levels [:error]
 

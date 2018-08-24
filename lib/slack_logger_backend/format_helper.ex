@@ -78,7 +78,7 @@ defmodule SlackLoggerBackend.FormatHelper do
     event
   end
 
-  defp get_color(:info), do: "#1898c2"
+  defp get_color(:info), do: "good"
   defp get_color(:debug), do: "#ffd77e"
   defp get_color(:warn), do: "warning"
   defp get_color(:error), do: "danger"
